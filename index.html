@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./dist/bundle.js"></script>
+    <script type="application/javascript">
+
+        const alpha = alphavantage({ key: 'EHOVBJD4WW395L5H' });
+
+        alpha.forex.rate('btc', 'usd').then(data => {
+            console.log(data);
+        });
+
+        alpha.crypto.daily('btc', 'usd').then(data => {
+            console.log(data);
+        });
+
+        alpha.technical.sma(`msft`, `daily`, 60, `close`).then(data => {
+            console.log(data);
+        });
+
+        alpha.performance.sector().then(data => {
+            console.log(data);
+        });
+    </script>
+</body>
+
+</html>
